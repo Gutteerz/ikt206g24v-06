@@ -85,7 +85,6 @@ container:
 
 host:
   # The parent directory of a job's working directory.
-  # If it's empty, $HOME/.cache/act/ will be used.
+  # If it's empty, $HOME/.cache/act/ will be
   workdir_parent: ""
 
-)
