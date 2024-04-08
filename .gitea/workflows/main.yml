@@ -8,6 +8,8 @@ jobs:
   build-and-push:
     runs-on: ubuntu-latest
     steps:
+      - name: Install node
+        run: apk add nodejs npm
       - name: Checkout code
         uses: actions/checkout@v2
       - name: Print environment information and Docker version
