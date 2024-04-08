@@ -1,16 +1,16 @@
 version: '3'
 services:
   web:
-    build:
-      context: .
-      target: final
+    image: areberntsen/ikt206g24v06:latest  # Using image from Docker Hub
     ports:
-      - "8080:80"
+      - "8081:80"
     depends_on:
       - db
     environment:
       - ASPNETCORE_ENVIRONMENT=Production
       - ConnectionStrings__DefaultConnection=Host=db;Port=5432;Database=postgres;Username=postgres;Password=Password1.;
+    labels:
+      - "com.centurylinklabs.watchtower.enable=true"
 
   db:
     image: postgres
@@ -30,6 +30,7 @@ services:
       - ./Caddyfile:/etc/caddy/Caddyfile
       - caddy_data:/data
       - caddy_config:/config
+
   watchtower:
     image: containrrr/watchtower
     volumes:
@@ -45,4 +46,3 @@ volumes:
   db_data:
   caddy_data:
   caddy_config:
-  
