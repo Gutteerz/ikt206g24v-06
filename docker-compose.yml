@@ -1,7 +1,7 @@
 version: '3'
 services:
   web:
-    image: gutteerz/ikt206gv2406:latest  # Using image from Docker Hub
+    image: gutteerz/ikt206gv2406  # Using image from Docker Hub
     ports:
       - "8081:80"
     depends_on:
